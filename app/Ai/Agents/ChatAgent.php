@@ -11,7 +11,7 @@ use Laravel\Ai\Promptable;
 use Stringable;
 
 #[Model('gemini-3.1-flash-lite')]
-class ChatAgent implements Agent, Conversational, HasTools
+class ChatAgent implements Agent, Conversational, HasTools, HasStructuredOutput
 {
     use Promptable;
 
@@ -53,5 +53,15 @@ class ChatAgent implements Agent, Conversational, HasTools
     public function tools(): iterable
     {
         return [];
+    }
+
+    /**
+     * Get the agent's structured output schema definition.
+     */
+    public function schema(JsonSchema $schema): array
+    {
+        return [
+            'message' => $schema->string()->required(),
+        ];
     }
 }
