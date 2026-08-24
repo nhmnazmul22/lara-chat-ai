@@ -9,4 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('/ai-chat', [AIChatController::class, 'chatWithAI'])->name('chat-with-ai');
+Route::post('/ai-chat', [AIChatController::class, 'chatWithAI'])->name('chat-with-ai');

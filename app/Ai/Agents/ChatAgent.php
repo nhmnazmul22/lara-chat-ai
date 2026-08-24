@@ -9,6 +9,8 @@ use Laravel\Ai\Contracts\Tool;
 use Laravel\Ai\Messages\Message;
 use Laravel\Ai\Promptable;
 use Stringable;
+use Laravel\Ai\Contracts\HasStructuredOutput;
+use Illuminate\Contracts\JsonSchema\JsonSchema;
 
 #[Model('gemini-3.1-flash-lite')]
 class ChatAgent implements Agent, Conversational, HasTools, HasStructuredOutput

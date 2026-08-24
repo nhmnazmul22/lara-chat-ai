@@ -13,7 +13,7 @@ class AIChatController extends Controller
             'message' => ['string']
         ]);
 
-        $response = (new ChatAgent)->promt($validated['message']);
+        $response = (new ChatAgent)->prompt($validated['message']);
 
         return $response->toArray();
     }
